@@ -7,13 +7,13 @@
   :line: 10
   :message: ''
 - :test: test_InsertarTren
-  :line: 17
+  :line: 16
   :message: ''
 - :test: test_InsertarTrenes
-  :line: 30
+  :line: 29
   :message: ''
 - :test: test_TrenesColision
-  :line: 45
+  :line: 44
   :message: ''
 :failures: []
 :ignores: []
@@ -25,4 +25,4 @@
 :stdout:
 - La ruta ascendente (1) tiene 1 tren/es circulando
 - La ruta descendente (2) tiene 1 tren/es circulando
-:time: 0.0022254689974943176
+:time: 0.0021877880062675104

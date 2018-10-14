@@ -27,8 +27,6 @@ void test_CrearRutas(void){
 
 ), (UNITY_UINT)(13), UNITY_DISPLAY_STYLE_HEX16);
 
-
-
 }
 
 
@@ -53,11 +51,11 @@ void test_InsertarTren(void){
 
  ((void *)0)
 
- ), (UNITY_UINT)(25), UNITY_DISPLAY_STYLE_HEX16);
+ ), (UNITY_UINT)(24), UNITY_DISPLAY_STYLE_HEX16);
 
  else
 
-  UnityFail( (("Tren fuera de via")), (UNITY_UINT)(27));
+  UnityFail( (("Tren fuera de via")), (UNITY_UINT)(26));
 
 }
 
@@ -81,7 +79,7 @@ void test_InsertarTrenes(void){
 
  if(!estado)
 
-  UnityFail( (("Tren fuera de via")), (UNITY_UINT)(39));
+  UnityFail( (("Tren fuera de via")), (UNITY_UINT)(38));
 
  }
 
@@ -91,7 +89,7 @@ void test_InsertarTrenes(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(42), UNITY_DISPLAY_STYLE_HEX16);
+), (UNITY_UINT)(41), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -109,13 +107,13 @@ void test_TrenesColision(void){
 
  if(!Tren_Insertar(1))
 
-  UnityFail( (("Tren fuera de via")), (UNITY_UINT)(51));
+  UnityFail( (("Tren fuera de via")), (UNITY_UINT)(50));
 
 
 
  if(!Tren_Insertar(2))
 
-  UnityFail( (("Tren fuera de via")), (UNITY_UINT)(54));
+  UnityFail( (("Tren fuera de via")), (UNITY_UINT)(53));
 
 
 
@@ -127,6 +125,6 @@ void test_TrenesColision(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(58), UNITY_DISPLAY_STYLE_HEX16);
+), (UNITY_UINT)(57), UNITY_DISPLAY_STYLE_HEX16);
 
 }

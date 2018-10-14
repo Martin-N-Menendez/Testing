@@ -8,10 +8,9 @@ void tearDown(void){
 }
 
 void test_CrearRutas(void){
-	uint16_t PosicionTrenes = 0x000;
+	uint16_t PosicionTrenes = SIN_TRENES;
 	Tren_Crear(&PosicionTrenes);
 	TEST_ASSERT_EQUAL_HEX16(0,PosicionTrenes);
-	//TEST_FAIL_MESSAGE("Empezamos");
 }
 
 void test_InsertarTren(void){
@@ -24,7 +23,7 @@ void test_InsertarTren(void){
 	if(estado)
 		TEST_ASSERT_EQUAL_HEX16(1,PosicionTrenes);
 	else
-		TEST_FAIL_MESSAGE("Tren fuera de via");
+		TEST_FAIL_MESSAGE(TREN_FUERA_MSG);
 }
 
 void test_InsertarTrenes(void){
@@ -32,14 +31,14 @@ void test_InsertarTrenes(void){
 	int estado,i;
 	Tren_Crear(&PosicionTrenes);
 
-	for(i=1;i<=12;i++){
+	for(i=1;i<=CV_MAX;i++){
 		estado = Tren_Insertar(i);
 
 	if(!estado)
-		TEST_FAIL_MESSAGE("Tren fuera de via");
+		TEST_FAIL_MESSAGE(TREN_FUERA_MSG);
 	}
 
-	TEST_ASSERT_EQUAL_HEX16(0xFFF,PosicionTrenes);	
+	TEST_ASSERT_EQUAL_HEX16(CON_TRENES,PosicionTrenes);	
 }
 
 void test_TrenesColision(void){
@@ -48,13 +47,13 @@ void test_TrenesColision(void){
 	Tren_Crear(&PosicionTrenes);
 
 	if(!Tren_Insertar(1))
-		TEST_FAIL_MESSAGE("Tren fuera de via");
+		TEST_FAIL_MESSAGE(TREN_FUERA_MSG);
 
 	if(!Tren_Insertar(2))
-		TEST_FAIL_MESSAGE("Tren fuera de via");
+		TEST_FAIL_MESSAGE(TREN_FUERA_MSG);
 
 	estado_colision = Tren_Colision(PosicionTrenes);
 
-	TEST_ASSERT_EQUAL_HEX16(0,estado_colision);	
+	TEST_ASSERT_EQUAL_HEX16(SIN_COLISION,estado_colision);	
 }
 

@@ -74,9 +74,9 @@ int main(void)
   suite_setup();
   UnityBegin("test_rutas.c");
   RUN_TEST(test_CrearRutas, 10);
-  RUN_TEST(test_InsertarTren, 17);
-  RUN_TEST(test_InsertarTrenes, 30);
-  RUN_TEST(test_TrenesColision, 45);
+  RUN_TEST(test_InsertarTren, 16);
+  RUN_TEST(test_InsertarTrenes, 29);
+  RUN_TEST(test_TrenesColision, 44);
 
   return suite_teardown(UnityEnd());
 }
