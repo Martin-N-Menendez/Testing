@@ -12,15 +12,17 @@
 - :test: test_InsertarTrenes
   :line: 30
   :message: ''
-:failures:
 - :test: test_TrenesColision
-  :line: 61
-  :message: Expected 0x0800 Was 0x0002
+  :line: 45
+  :message: ''
+:failures: []
 :ignores: []
 :counts:
   :total: 4
-  :passed: 3
-  :failed: 1
+  :passed: 4
+  :failed: 0
   :ignored: 0
-:stdout: []
-:time: 0.0021486479963641614
+:stdout:
+- La ruta ascendente (1) tiene 1 tren/es circulando
+- La ruta descendente (2) tiene 1 tren/es circulando
+:time: 0.0022254689974943176

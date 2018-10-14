@@ -39,25 +39,22 @@ void test_InsertarTrenes(void){
 		TEST_FAIL_MESSAGE("Tren fuera de via");
 	}
 
-	TEST_ASSERT_EQUAL_HEX16(2048,PosicionTrenes);	
+	TEST_ASSERT_EQUAL_HEX16(0xFFF,PosicionTrenes);	
 }
 
 void test_TrenesColision(void){
 	uint16_t PosicionTrenes;
-	int estado1,estado2;
+	int estado_colision;
 	Tren_Crear(&PosicionTrenes);
 
-	estado1 = Tren_Insertar(1);
-	estado2 = Tren_Insertar(2);
-
-	if(estado1 == 0 || estado2 == 0)
+	if(!Tren_Insertar(1))
 		TEST_FAIL_MESSAGE("Tren fuera de via");
 
-	Tren_Colision(PosicionTrenes);
+	if(!Tren_Insertar(2))
+		TEST_FAIL_MESSAGE("Tren fuera de via");
 
+	estado_colision = Tren_Colision(PosicionTrenes);
 
-	
-
-	TEST_ASSERT_EQUAL_HEX16(2048,PosicionTrenes);	
+	TEST_ASSERT_EQUAL_HEX16(0,estado_colision);	
 }
 

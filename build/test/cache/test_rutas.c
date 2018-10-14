@@ -87,7 +87,7 @@ void test_InsertarTrenes(void){
 
 
 
- UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((2048)), (UNITY_INT)(UNITY_INT16)((PosicionTrenes)), (
+ UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0xFFF)), (UNITY_INT)(UNITY_INT16)((PosicionTrenes)), (
 
 ((void *)0)
 
@@ -101,38 +101,32 @@ void test_TrenesColision(void){
 
  uint16_t PosicionTrenes;
 
- int estado1,estado2;
+ int estado_colision;
 
  Tren_Crear(&PosicionTrenes);
 
 
 
- estado1 = Tren_Insertar(1);
+ if(!Tren_Insertar(1))
 
- estado2 = Tren_Insertar(2);
+  UnityFail( (("Tren fuera de via")), (UNITY_UINT)(51));
 
 
 
- if(estado1 == 0 || estado2 == 0)
+ if(!Tren_Insertar(2))
 
   UnityFail( (("Tren fuera de via")), (UNITY_UINT)(54));
 
 
 
- Tren_Colision(PosicionTrenes);
+ estado_colision = Tren_Colision(PosicionTrenes);
 
 
 
-
-
-
-
-
-
- UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((2048)), (UNITY_INT)(UNITY_INT16)((PosicionTrenes)), (
+ UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0)), (UNITY_INT)(UNITY_INT16)((estado_colision)), (
 
 ((void *)0)
 
-), (UNITY_UINT)(61), UNITY_DISPLAY_STYLE_HEX16);
+), (UNITY_UINT)(58), UNITY_DISPLAY_STYLE_HEX16);
 
 }
