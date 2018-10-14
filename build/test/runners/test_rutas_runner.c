@@ -37,6 +37,8 @@ extern void setUp(void);
 extern void tearDown(void);
 extern void test_CrearRutas(void);
 extern void test_InsertarTren(void);
+extern void test_InsertarTrenes(void);
+extern void test_TrenesColision(void);
 
 
 /*=======Suite Setup=====*/
@@ -73,6 +75,8 @@ int main(void)
   UnityBegin("test_rutas.c");
   RUN_TEST(test_CrearRutas, 10);
   RUN_TEST(test_InsertarTren, 17);
+  RUN_TEST(test_InsertarTrenes, 30);
+  RUN_TEST(test_TrenesColision, 45);
 
   return suite_teardown(UnityEnd());
 }

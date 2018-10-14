@@ -9,12 +9,18 @@
 - :test: test_InsertarTren
   :line: 17
   :message: ''
-:failures: []
+- :test: test_InsertarTrenes
+  :line: 30
+  :message: ''
+:failures:
+- :test: test_TrenesColision
+  :line: 61
+  :message: Expected 0x0800 Was 0x0002
 :ignores: []
 :counts:
-  :total: 2
-  :passed: 2
-  :failed: 0
+  :total: 4
+  :passed: 3
+  :failed: 1
   :ignored: 0
 :stdout: []
-:time: 0.002260296001622919
+:time: 0.0021486479963641614
